@@ -1,0 +1,248 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600&display=swap');
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h1{font-family:algerian;
+font-size:150px;}
+
+.olympic-title {
+  font-family: 'Algerian', serif; /* Algerian must be installed locally */
+  font-size: 5rem;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-align: center;
+}
+
+/* Olympic ring colors applied in cycle */
+.olympic-title span:nth-child(1) { color: #000000; }  /* Black */
+.olympic-title span:nth-child(2) { color: #0000FF; }  /* Blue */
+.olympic-title span:nth-child(3) { color: #FF0000; }  /* Red */
+.olympic-title span:nth-child(4) { color: #FFFF00; }  /* Yellow */
+.olympic-title span:nth-child(5) { color: #008000; }  /* Green */
+
+/* Continue the cycle for the rest of the letters */
+.olympic-title span:nth-child(6) { color: #000000; }
+.olympic-title span:nth-child(7) { color: #0000FF; }
+.olympic-title span:nth-child(8) { color: #FF0000; }
+.olympic-title span:nth-child(9) { color: #FFFF00; }
+.olympic-title span:nth-child(10){ color: #008000; }
+.olympic-title span:nth-child(11){ color: #000000; }
+.olympic-title span:nth-child(12){ color: #0000FF; }
+.olympic-title span:nth-child(13){ color: #FF0000; }
+
+
+
+/* Body */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f4f4f4;
+  color: #222;
+  line-height: 1.6;
+}
+
+html {
+  scroll-padding-top: 50px; /* adjust based on your header height */
+}
+
+/* Header */
+header {
+  position: sticky;
+  top: 0;
+  background: #2c3e50;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* logo left, menu right */
+  flex-wrap: nowrap; /* prevent wrapping */
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+header .logo {
+  color: #ecf0f1;
+  font-size: 1.8em; /* adjust if needed */
+  font-weight: bold;
+  white-space: nowrap; /* ensures logo text stays in one line */
+}
+
+/* For section titles */
+section h2 {
+  white-space: nowrap; /* prevents wrapping */
+  overflow: hidden;    /* hides excess if too long */
+  text-overflow: ellipsis; /* adds ... if text is too long */
+}
+
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #ecf0f1;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ffffff;
+  background: lightblue;
+}
+
+
+/* Hero */
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #34495e, #2c3e50);
+  color: #ecf0f1;
+  height: 700px;
+}
+
+.hero h1 {
+  font-size: 4em;
+  color: #ecf0f1;
+  font-weight: bold;
+}
+
+.rings-bg {
+  width: 420px;
+  margin-top: 20px;
+  opacity: 0.9;
+  animation: spin 6s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg);}
+  to { transform: rotate(360deg);}
+}
+
+/* Sections */
+.content {
+  padding: 50px 10%;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Section background alternation */
+#intro { background: #ffffff; }
+#ancient { background: #f9f9f9; }
+#modern { background: #f1f1f1; }
+#revival { background: #ffffff; }
+#changes { background: #f9f9f9; }
+#symbols { background: #f1f1f1; }
+#nations { background: #ffffff; }
+
+.content h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.8em;
+  margin-bottom: 20px;
+  color: #111;
+  border-left: 6px solid #3498db;
+  padding-left: 12px;
+}
+
+.content p {
+  margin-bottom: 20px;
+  text-align: justify;
+  font-size: 1.1em;
+  color: #333;
+}
+
+/* Images */
+.content img {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.content img:hover {
+  transform: scale(1.05);
+}
+
+/* Intro Blocks */
+.intro-block {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.intro-block img {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.intro-text {
+  flex: 1;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Reverse blocks */
+.intro-block.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .intro-block,
+  .intro-block.reverse {
+    flex-direction: column;
+    text-align: center;
+  }
+  .intro-block img {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+/* Gallery */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.gallery img {
+  width: 30%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  background: #2c3e50;
+  color: #ecf0f1;
+  padding: 25px;
+  font-weight: 500;
+  font-size: 1em;
+}
